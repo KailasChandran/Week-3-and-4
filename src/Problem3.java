@@ -6,6 +6,7 @@ class LargestNumberCheck {
         Scanner input = new Scanner(System.in);
         int number1 = input.nextInt();
         int number2 = input.nextInt();
+        //level1
         int number3 = input.nextInt();
 
         boolean isFirstLargest = (number1 > number2) && (number1 > number3);
