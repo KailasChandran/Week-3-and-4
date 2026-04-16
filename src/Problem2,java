@@ -1,13 +1,22 @@
 import java.util.Scanner;
 
-class SmallestNumberCheck {
+class EmployeeBonus {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int number1 = input.nextInt();
-        int number2 = input.nextInt();
-        int number3 = input.nextInt();
-        boolean isFirstSmallest = (number1 < number2) && (number1 < number3);
-        System.out.println("Is the first number the smallest? " + isFirstSmallest);
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+
+            System.out.print("Enter salary: ");
+            double salary = input.nextDouble();
+            System.out.print("Enter years of service: ");
+            int yearsOfService = input.nextInt();
+            double bonus = 0;
+
+            if (yearsOfService > 5) {
+                bonus = salary * 5 / 100;
+            } else {
+                bonus = 0;
+            }
+
+            System.out.println("Bonus amount is: " + bonus);
+        }
     }
 }
