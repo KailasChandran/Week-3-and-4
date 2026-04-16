@@ -1,17 +1,27 @@
 import java.util.Scanner;
 
-class OddEvenNumbers {
+class LeapYear {
     public static void main(String[] args) {
 
         try (Scanner input = new Scanner(System.in)) {
-            System.out.print("Enter a number: ");
-            int number = input.nextInt();
 
-            for (int i = 1; i <= number; i++) {
-                if (i % 2 == 0) {
-                    System.out.println(i + " is Even");
+            int year = input.nextInt();
+
+            if (year < 1582) {
+                System.out.println("Invalid Year");
+            } else {
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                            System.out.println("Leap Year");
+                        } else {
+                            System.out.println("Not a Leap Year");
+                        }
+                    } else {
+                        System.out.println("Leap Year");
+                    }
                 } else {
-                    System.out.println(i + " is Odd");
+                    System.out.println("Not a Leap Year");
                 }
             }
         }
